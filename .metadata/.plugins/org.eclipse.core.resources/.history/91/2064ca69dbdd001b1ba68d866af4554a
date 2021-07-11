@@ -1,0 +1,9 @@
+package model.services;
+
+public class RentalService {
+	private Double pricePerDay;
+	private Double pricePerHour;
+	private BrazilTaxServices taxServices;
+	
+	
+}

@@ -1,0 +1,36 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Program {
+	public static void main (String[] args) {
+//		Generics são invariantes
+//		List<Object> não é o supertipo de qualquer tipo de lista:
+//		List<Object> myObjs = new ArrayList<Object>();
+//		List<Integer> myNumbers = new ArrayList<Integer>();
+//		MyObjs = myNumbers; -> erro de compilação
+
+//		O supertipo de qualquer lista é List<?>. Este é um tipo coringa:
+			
+//		List<?> myObjs = new ArrayList<Object>();
+//		List<Integer> myNumbers = new ArrayList<Integer>();
+//		myObjs = myNumbers;
+		
+//		Com tipos coringa podemos fazer métodos que recebem um genérico
+//		de "qualquer tipo":
+		
+		List<Integer> myInts = Arrays.asList(5, 2, 10);
+		extracted(myInts);
+		
+	}
+
+	public static void extracted(List<?> list) {
+		for(Object obj : list) {
+			System.out.println(obj);
+		}
+	}
+	
+//	No entanto, em listas coringas elementos não podem ser adicionados.
+}

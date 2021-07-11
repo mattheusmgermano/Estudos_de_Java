@@ -1,0 +1,80 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+import entities.Contratos;
+import entities.Trabalhador;
+import entities.enums.NivelTrabalhador;
+
+public class Program {
+
+	public static void main(String[] args) throws ParseException {
+//		É um tipo de associação que permite que um objeto
+//		contenha outro.
+//		
+//		Relação "tem-um" ou "tem-vários". 
+//		
+//		Vantagens: 
+//			Organização;
+//			Coesão;
+//			Flexibilidade;
+//			Reuso.
+//		
+//		Nota: embora o símbolo UML para composição (todo-parte) seja
+//		o diamante preto, neste contexto estamos chamando de composição
+//		qualquer associação tipo "T-1"/"T-++";
+
+//		Ler os dados de um trabalhador com N contratos (N fornecido pelo
+//		usuário). Depois, solicitar do usuário um mês e mostrar qual foi
+//		o salário do funcionário nesse mês.
+		
+		var sc = new Scanner(System.in);
+		var sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		System.out.println("Informe o nome do departamento: ");
+		var nomeDepartamento = sc.nextLine();
+		System.out.println("Digite os dados do trabalhador: ");
+		System.out.println("Nome: ");
+		var nomeTrabalhador = sc.nextLine();
+		System.out.println("Nível do trabalhador: ");
+		var nivelTrabalhador = sc.nextLine();
+		System.out.println("Salário: ");
+		var salarioTrabalhador = sc.nextDouble();
+		
+		var trabalhador = new Trabalhador(nomeTrabalhador,
+				NivelTrabalhador.valueOf(nivelTrabalhador),
+				salarioTrabalhador,
+				nomeDepartamento);
+		
+		System.out.printf("Quantos contratos %s possui?%n", nomeTrabalhador);
+		var n = sc.nextInt();
+		for(var i = 0; i <= n; i++) {
+			System.out.println("Digite as informaçõs referentes ao contrato:");
+			System.out.print("Data (DD/MM/YYYY): ");
+			Date dataContrato = sdf.parse(sc.next());
+			System.out.print("Informe o valor/hora: ");
+			var valorHora = sc.nextDouble();
+			System.out.print("Informe a duração: ");
+			var horasDuracao = sc.nextInt();
+			var novoContrato = new Contratos(dataContrato, valorHora, horasDuracao);
+			trabalhador.adicionarContrato(novoContrato);
+		}
+
+		System.out.println("Informe o mês e o ano para calcular os ganhos do trabalhador(MM/YYYY): ");
+		var mesEAno = sc.next();
+		var mes = Integer.parseInt(mesEAno.substring(0,1));
+		var ano = Integer.parseInt(mesEAno.substring(3));
+		
+		System.out.println("Trabalhador: " + trabalhador.getNome());
+		System.out.println("Departamento: " + trabalhador.getDepartamento());
+		System.out.println("Ganhos no período de "+ mesEAno + ": " + 
+							String.format("%.2f", trabalhador.ganhos(mes, ano)));
+		
+		
+		
+		sc.close();
+		
+	}
+
+}

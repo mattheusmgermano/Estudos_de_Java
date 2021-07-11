@@ -1,0 +1,10 @@
+package interfaces;
+
+import java.security.InvalidParameterException;
+
+public interface InterestRate {
+	
+	public double getInterestRate();
+	
+	public double payment(double amount, int months);
+}

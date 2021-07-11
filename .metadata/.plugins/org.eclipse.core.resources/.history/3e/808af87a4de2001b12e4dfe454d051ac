@@ -1,0 +1,30 @@
+package application;
+
+public class Program {
+	public static void main(String[] args) {
+//		Map<K,V>
+//		É uma coleção de pares chave/valor:
+//			Não admite repetições do objeto chave;
+//			Os elementos são indexados pelo objeto chave (não possuem posição);
+//			Acesso, inserção e remoção dos elementos são rápidos.
+//			
+//		Uso comum: cookies, local storage, qualquer modelo chave-valor.
+//		
+//		Principais implementações:
+//			HashMap: mais rápido (operações O(1) em table hash) e não ordenado;
+//			TreeMap: mais lento (operações O(log(n))) em árvore rubro-negra;
+//			LinkedHashMap: velocidade intermediária e ordenado por ordem de adição.
+//			
+//		Métodos importantes:
+//			put(key, value), remove(key), containsKey(key), get(key)
+//				baseado em equals e hashcode;
+//				se equals e hashcode não existirem, utiliza comparação de ponteiros
+//				
+//			clear()
+//			size()
+//			keySet() - retorna um Set<K>
+//			values() - retorna um Collection<V>
+		
+		
+	}
+}

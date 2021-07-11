@@ -1,0 +1,81 @@
+package application;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class Program {
+	public static void main(String[] args) {
+//		É uma sequência de elementos advinda de uma fonte de dados que oferece a
+//		"operações agregadas".
+//		Fonte de dados: coleção, array, função de iteração, recurso de E/S;
+		
+//		Características
+//		
+//		Stream é uma solução para processar sequências de dados de forma:
+//			Declarativa(iteração interna: escondida do programador)
+//			Parallel-friendly (imutável->thread safe)
+//			Sem efeitos colaterais
+//			Sob demanda (lazy evaluation)
+//		
+//		Acesso sequencial
+//		
+//		Single-use: só pode ser usada uma vez
+//		
+//		Pipeline: operações em streams retornam novas streams. Então é possível
+//		criar uma cadeia de operações (fluxo de processamento).
+		
+//		Operações intermediárias e terminais
+//		
+//		O pipeline é composto por zero ou mais operações intermediárias e uma terminal.
+//		
+//		Operação intermediária:
+//			Produz uma nova stream(encadeamento)
+//			Só executa quando uma operação terminal é invocada (lazy evaluation)
+//			
+//		Operação terminal:
+//			Produz um objeto não-stream(coleção ou outro)
+//			Determina o fim do processamento da stream
+		
+//		Operações intermediárias:
+//			filter
+//			map
+//			flatmap
+//			peek
+//			distinct
+//			sorted
+//			skip
+//			limit(num) -> short-circuit -> termina o processamento da stream de acordo com o número informado
+		
+//		Operações terminais:
+//			forEach
+//			forEachOrdered
+//			toArray
+//			reduce
+//			collect
+//			min
+//			max
+//			count
+//			anyMatch(*)
+//			allMatch(*)
+//			noneMatch(*)
+//			findFirst(*)
+//			findAny(*)
+//			* -> short-circuit
+		
+//		Como criar um stream?
+//				
+//		Basta chamar o método stream() ou parallelStream() a partir de qualquer objeto Collection. 
+//		
+//		Outras formas de se criar uma stream incluem:
+//			Stream.of()
+//			Stream.ofNullable()
+//			Stream.iterate()
+		List<Integer> list = Arrays.asList(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024);
+		
+		Stream<Integer> st1 = list.stream().map(x -> x * 10);
+		
+		System.out.println(Arrays.toString(st1.toArray()));
+		
+	}
+}

@@ -1,0 +1,81 @@
+package application;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Program {
+//	Set<T>
+//	Representa um conjunto de elementos (similar ao da Álgebra)
+//	Não admite repetições
+//	Elementos não possuem posição
+//	Acesso, inserção e remoção são rápidos
+//	Oferece operações eficientes de conjunto: interseção, união, diferença
+//	Principais implementações:
+//		HashSet - mais rápido (operaçõesO(1) em tabelas hash) e não ordenado;
+//		TreeSet - mais lento (operações O(log(n)) em árvore rubro-negra) pelo
+//		compareTo do objeto (ou Comparator)
+//		LinkedHashSet - velocidade intermediária e elementos na ordem em que são adicionados
+//		
+//	Alguns métodos importantes:
+//	add(obj), remove(obj), contains(obj)
+//		Baseado em equals e hashCode;
+//		Se equals e hashCode não existir, é usada comparação de ponteiros.
+//	clear()
+//	size()
+//	removeIf(predicate)
+//	addAll(other) - união: adiciona no conjunto os elementos de outro conjunto, sem repetição
+//	retainAll(other) - interseção: remove do conjunto os elementos não contidos em other
+//	removeAll(other) - diferença: remove do conjunto os elementos contidos em other
+	
+	public static void main(String[] args) {
+		hashset();
+		treeset();
+		
+		
+	}
+
+public static void treeset() {
+	Set<String> set = new TreeSet<>();
+	set.add("1) TV");
+	set.add("2) Videogame");
+	set.add("3) Rometitxe");
+	
+	System.out.println(set.contains("Rometitxe"));
+	
+	for(var obj : set) {
+		System.out.println(obj);
+	}
+	System.out.println("[Fim do método TreeSet]");
+}
+
+public static void linkedset() {
+	Set<String> set = new LinkedHashSet<>();
+	set.add("1) TV");
+	set.add("2) Videogame");
+	set.add("3) Rometitxe");
+	
+	System.out.println(set.contains("Rometitxe"));
+	
+	for(var obj : set) {
+		System.out.println(obj);
+	}
+	System.out.println("[Fim do método TreeSet]");
+}
+
+public static void hashset() {
+	Set<String> set = new HashSet<>();
+	set.add("1) TV");
+	set.add("2) Videogame");
+	set.add("3) Rometitxe");
+	
+	System.out.println(set.contains("Rometitxe"));
+	
+	for(var obj : set) {
+		System.out.println(obj);
+	}
+	System.out.println("[Fim do método HashSet]");
+}
+	
+}

@@ -1,0 +1,9 @@
+package model.entities;
+
+import model.enums.Color;
+
+public class AbstractShape {
+	private Color color;
+	
+	
+}

@@ -1,0 +1,22 @@
+package application;
+
+public class Program {
+	public static void main(String[] args) {
+//		Recordando:
+//			removeIf(Predicate)
+//			foreach(Consumer)
+//			map(Function)
+//			
+//		Mas e se, eu, Mattheus Germano quiser criar a minha função que recebe outra função como argumento?
+//				
+//		A resposta é: não sei.
+//		
+//		Mentira.
+		
+		Fazer um programa que, a partir de uma lista de produtos, calcule a soma dos preços
+		somente dos produtos cujo nome começa com "T".
+		
+		
+		
+	}
+}

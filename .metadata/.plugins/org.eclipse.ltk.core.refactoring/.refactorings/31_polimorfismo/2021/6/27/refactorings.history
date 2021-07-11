@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;entities&apos; to &apos;33_classes_abstratas/src&apos;&#x0D;&#x0A;- Original project: &apos;31_polimorfismo&apos;&#x0D;&#x0A;- Destination element: &apos;33_classes_abstratas/src&apos;&#x0D;&#x0A;- Original element: &apos;31_polimorfismo/src/entities&apos;" description="Copy package" destination="=33_classes_abstratas/src" element1="/src&lt;entities" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1624991143301" version="1.0"/>
+</session>

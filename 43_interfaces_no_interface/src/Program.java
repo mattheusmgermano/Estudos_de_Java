@@ -1,0 +1,70 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.Scanner;
+
+import model.entities.CarRental;
+import model.entities.Vehicle;
+import model.services.BrazilTaxServices;
+import model.services.RentalService;
+
+public class Program {
+
+//	A partir do Java 8, interfaces podem ter "default methods" ou "defender methods".
+//	
+//	Isso possui implicações conceituais e práticas.
+//	
+//	A interface é um tipo que define um conjunto de operações que uma classe deve implementar.
+//	
+//	A interface estabelece um contrato que a classe deve cumprir.
+//	
+//	Pra quê interfaces?
+//			
+//		Para criar sistemas com baixo acoplamentos e flexível.
+//		
+//	Uma locadora brasileira de carros cobra um valor por hora para locações de até
+//	12 horas. Porém, se a duração de locação ultrapassar 12 horas, a locação será
+//	cobrada com base em um valor diário. Além do valor da locação, é acrescido no
+//	preço valor do imposto conforme regra do país que, neste caso, é 20% para val
+//	ores até R$ 100,00 ou 15% para valores acima de R$ 100,00. Fazer um programa 
+//	que lê os dados da locação (modelo do carro, instante inicial e final da lo-
+//	cação), bem como o valor por hora e o valor diário de locação. O programa 
+//	deve então gerar a nota de pagamento (contendo valor da locação, valor do 
+//	imposto e valor total do pagamento) e informar os dados na tela.
+	
+	public static void main (String[] args) throws ParseException{
+		Locale.setDefault(Locale.US);
+		
+		var sc = new Scanner(System.in);
+		
+		var sdf = new SimpleDateFormat("dd/MM/yyyy HH:ss");
+		
+		System.out.println("Enter rental data:");
+		System.out.println("Car model: ");
+		var carModel = sc.nextLine();
+		System.out.println("Pick-up date (dd/mm/yyyy hh:ss):");
+		var start = sdf.parse(sc.nextLine());
+		System.out.println("Return date (dd/mm/yyyy hh:ss");
+		var finish = sdf.parse(sc.nextLine());
+		
+		var cr = new CarRental(start, finish, new Vehicle(carModel));
+		
+		System.out.println("Enter the price per hour: ");
+		var pricePerHour = sc.nextDouble();
+		System.out.println("Enter the price per day: ");
+		var pricePerDay = sc.nextDouble();
+		
+		var rentalService = new RentalService(pricePerDay, pricePerHour, new BrazilTaxServices());
+		
+		rentalService.processInvoice(cr);
+		
+		System.out.println("Invoice: ");
+		System.out.println("Basic payment: " + String.format("%.2f", cr.getInvoice().getBasicPayment()));
+		System.out.println("Tax: " + String.format("%.2f", cr.getInvoice().getTax()));
+		System.out.println("Total payment: " + String.format("%.2f", cr.getInvoice().getTotalPayment()));
+		
+		sc.close();
+		
+		
+	}
+}

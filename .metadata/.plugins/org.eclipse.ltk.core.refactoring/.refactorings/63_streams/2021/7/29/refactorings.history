@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;public static void deregunde()&apos; from &apos;application.Program.main(...)&apos; to &apos;application.Program&apos;&#x0D;&#x0A;- Original project: &apos;63_streams&apos;&#x0D;&#x0A;- Method name: &apos;deregunde&apos;&#x0D;&#x0A;- Destination type: &apos;application.Program&apos;&#x0D;&#x0A;- Declared visibility: &apos;public&apos;" comments="false" description="Extract method &apos;deregunde&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;application{Program.java" name="deregunde" replace="false" selection="2016 637" stamp="1626038567131" version="1.0" visibility="1"/>
+</session>

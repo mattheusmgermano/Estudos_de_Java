@@ -1,0 +1,75 @@
+package application;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+import entities.Product;
+
+public class Program {
+	public static void main(String[] args) {
+//		Map<K,V>
+//		É uma coleção de pares chave/valor:
+//			Não admite repetições do objeto chave;
+//			Os elementos são indexados pelo objeto chave (não possuem posição);
+//			Acesso, inserção e remoção dos elementos são rápidos.
+//			
+//		Uso comum: cookies, local storage, qualquer modelo chave-valor.
+//		
+//		Principais implementações:
+//			HashMap: mais rápido (operações O(1) em table hash) e não ordenado;
+//			TreeMap: mais lento (operações O(log(n))) em árvore rubro-negra;
+//			LinkedHashMap: velocidade intermediária e ordenado por ordem de adição.
+//			
+//		Métodos importantes:
+//			put(key, value), remove(key), containsKey(key), get(key)
+//				baseado em equals e hashcode;
+//				se equals e hashcode não existirem, utiliza comparação de ponteiros
+//				
+//			clear()
+//			size()
+//			keySet() - retorna um Set<K>
+//			values() - retorna um Collection<V>
+		
+//		cookiesExample();
+		
+		Map<Product, Integer> stock = new HashMap<>();
+		var p1 = new Product ("Titanium Dildo", 999.99);
+		var p2 = new Product ("Ultrasonic Whip for Dubious Purposes", 2999.99);
+		var p3 = new Product ("Mystical Beer from Glacial Waters Brewed by Moses Descendants Born in July", 15999.99);
+		stock.put(p1, 15000);
+		stock.put(p2, 32000);
+		stock.put(p3, 100);
+		
+		var p4 = new Product("Mystical Beer from Glacial Waters Brewed by Moses Descendants Born in July", 15999.99);
+		
+		System.out.println("Contains 'p4' key? " + stock.containsKey(p4));
+	}
+
+	public static void cookiesExample() {
+		Map<String, String> cookies = new TreeMap<>();
+		
+		cookies.put("username", "maria");
+		cookies.put("email", "maria@maria.mar.ia");
+		cookies.put("phone", "05133229988");
+		
+		cookies.remove("email");
+		
+		readMap(cookies);
+		
+		cookies.put("phone", "05132238989");
+		
+		readMap(cookies);
+		
+		System.out.println("Contains 'phone' key? " + cookies.containsKey("phone"));
+		System.out.println("Contains 'phone' key? " + cookies.containsKey("zipcode"));
+		System.out.println("Size:  " + cookies.size());
+	}
+
+	public static void readMap(Map<String, String> cookies) {
+		System.out.println("All cookies:");
+		for(var key : cookies.keySet()) {
+			System.out.println(key + ": " + cookies.get(key));
+		}
+	}
+}

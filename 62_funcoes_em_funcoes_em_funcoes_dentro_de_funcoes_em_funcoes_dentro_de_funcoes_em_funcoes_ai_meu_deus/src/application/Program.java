@@ -1,0 +1,45 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import entities.Product;
+import services.ProductService;
+
+public class Program {
+	public static void main(String[] args) {
+//		Recordando:
+//			removeIf(Predicate)
+//			foreach(Consumer)
+//			map(Function)
+//			
+//		Mas e se, eu, Mattheus Germano quiser criar a minha função que recebe outra função como argumento?
+//				
+//		A resposta é: não sei.
+//		
+//		Mentira.
+		
+//		Fazer um programa que, a partir de uma lista de produtos, calcule a soma dos preços
+//		somente dos produtos cujo nome começa com "T".
+		
+		List<Product> list = new ArrayList<>();
+		
+		list.add(new Product("Ultimate Garçom Segurança Biônico com Jatos de Propulsão Ultrasônica e Armas Laser", 999999.00));
+		list.add(new Product("Botas Aéreas para 75% de Flutuação Corpórea", 85000.00));
+		list.add(new Product("Nave Réplica da Mulher Maravilha, 100% Invisível (Meu deus cadê?)", 1000000.00));
+		list.add(new Product("Super Sabre Laser Recarregável a Base de Energia Eólica", 60000.00));
+		list.add(new Product("Cloroquina Radiotiva para Evolução em Carangueijo", 900.00));
+		list.add(new Product("Cloroquina Premium, Safra de Chernobyl, para Evolução em Minhoca Metálica", 900.00));
+		
+		var ps = new ProductService();
+		
+		double sum = ps.filteredSum(list);
+		double sum2 = ps.filteredSumWithPredicate(list, p -> p.getName().charAt(0) == 'C');
+		
+		System.out.println("Sum: "+ String.format("%.2f", sum));
+		System.out.println("Sum: "+ String.format("%.2f", sum2));
+		
+		
+		
+	}
+}

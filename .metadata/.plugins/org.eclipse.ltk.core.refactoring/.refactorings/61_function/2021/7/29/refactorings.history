@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;entities&apos; to &apos;62_funcoes_em_funcoes_em_funcoes_dentro_de_funcoes_em_funcoes_dentro_de_funcoes_em_funcoes_ai_meu_deus/src&apos;&#x0D;&#x0A;- Original project: &apos;61_function&apos;&#x0D;&#x0A;- Destination element: &apos;62_funcoes_em_funcoes_em_funcoes_dentro_de_funcoes_em_funcoes_dentro_de_funcoes_em_funcoes_ai_meu_deus/src&apos;&#x0D;&#x0A;- Original element: &apos;61_function/src/entities&apos;" description="Copy package" destination="=62_funcoes_em_funcoes_em_funcoes_dentro_de_funcoes_em_funcoes_dentro_de_funcoes_em_funcoes_ai_meu_deus/src" element1="/src&lt;entities" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1626035592337" version="1.0"/>
+</session>

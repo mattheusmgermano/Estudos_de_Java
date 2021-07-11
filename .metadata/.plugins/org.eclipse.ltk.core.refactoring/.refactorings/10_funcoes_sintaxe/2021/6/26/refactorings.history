@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static void maior(int a, int b, int c)&apos; from &apos;Main.main(...)&apos; to &apos;Main&apos;&#x0D;&#x0A;- Original project: &apos;10_funcoes_sintaxe&apos;&#x0D;&#x0A;- Method name: &apos;maior&apos;&#x0D;&#x0A;- Destination type: &apos;Main&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;maior&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;{Main.java" name="maior" replace="false" selection="268 251" stamp="1624292284205" version="1.0" visibility="2"/>
+</session>

@@ -1,0 +1,39 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import entities.Product;
+import services.MyComparator;
+
+public class Program {
+	
+//	Problema:
+//		
+//	Suponha uma classe Product com os atributos name e price.
+//	
+//	Podemos implementar a comparação de produtos por meio da
+//	implementação da interface Comparable<Product>.
+//	
+//	Entretanto, desta forma nossa classe não fica fechada para
+//	alteração: se o critério de comparação mudar, precisaremos 
+//	alterar a classe product.
+//	
+//	Podemos usar então o default method "sort" da interface List: 
+//		default void sort(Comparator<? super E> c);
+	
+	public static void main(String[] args) {
+		List<Product> list = new ArrayList<>();
+		list.add(new Product("TV", 399.99));
+		list.add(new Product("Gamer Notebook", 3999.99));
+		list.add(new Product("iPad", 999.99));
+		
+//		Collections.sort(list);  // tem que ser comparable para usar collections.sort
+		
+		list.sort(new MyComparator());
+		
+		for (var item : list) {
+			System.out.println(item.toString());
+		}
+	}
+}
